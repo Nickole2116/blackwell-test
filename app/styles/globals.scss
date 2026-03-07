@@ -1,0 +1,10 @@
+@import "./variable";
+@import "./typography";
+
+@import "tailwindcss";
+
+
+body {
+  background: $background;
+  font-family: "ATRotisSemiSans", Arial, Helvetica, sans-serif;
+}
