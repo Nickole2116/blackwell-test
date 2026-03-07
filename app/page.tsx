@@ -1,19 +1,11 @@
 import Image from "next/image";
+import HomePage from "./home/page";
 
-export default function Home() {
+
+export default function Root() {
   return (
-
     <>
-      {/** Header */}
-      <div className="flex flex-col items-center justify-center" style={{ fontWeight: 800 }}>PROMOTION END IN</div>
-      <div className="flex flex-col items-center justify-center" style={{ fontWeight: 300 }}>PROMOTION END IN</div>
-
-
-      {/** Content */}
-
-
-      {/** Footer */}
-
+      <HomePage />
     </>
 
 
