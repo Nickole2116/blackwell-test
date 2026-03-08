@@ -211,6 +211,55 @@ body {
       }
     }
   }
+
+  & .bigtitle {
+    color: $dark-blue;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  & .bigsubtitle {
+    color: $gold;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  & > .fast-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  & > .easy-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  & > .trade-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  & > .mt4-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  & > .why-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  & > .navigate-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  & > .enquire-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
 }
 
 
