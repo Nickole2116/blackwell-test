@@ -8,5 +8,250 @@ body {
   background: $background;
   font-family: "ATRotisSemiSans", Arial, Helvetica, sans-serif;
 }
+* {
+  line-height: 1.15;
+}
 
 /* Landing Content */
+.head {
+  background-color: $header-background;
+  padding: .5rem 1.25rem;
+  min-height: 60px;
+  
+
+  & > .container {
+    max-width: 1520px;
+    & > .left-side {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 20%;
+
+      & .logo {
+        width: 120px;
+        height: auto;
+      }
+    }
+
+    & > .center-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      gap: 5rem;
+
+      & .countdown-label {
+        font-size: .875rem;
+        font-weight: 400;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.25;
+      }
+
+      & .countdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        & .countdown-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          width: 3.25rem;
+
+          & .value {
+            display: flex;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: .375rem;
+          }
+          & .label {
+            display: flex;
+            font-size: .813rem;
+            font-weight: 400;
+            color: #fff;
+          }
+        }
+
+        & .countdown-separator {
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: #fff;
+          align-self: start;
+        }
+      }
+      
+      
+    }
+
+    & > .right-side {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .375rem;
+      width: 20%;
+
+      & .thumbnail {
+        color: #b4b4b4;
+      }
+
+    }
+  }
+
+  
+
+  
+}
+
+.body {
+  padding-top: 72px;
+  max-width: 1520px;
+  margin: 0 auto;
+
+  & > .copytrade-section {
+    position: relative;
+    padding: 2rem 0;
+    min-height: 100vh;
+    & > .copytrade-container {
+      position: relative;
+      & > .hand {
+        width: auto;
+        min-height: 900px;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        left: -20vw;
+        top: 0;
+      }
+
+      & > .copytrade-content {
+        padding-left: 45%;
+        padding-right: 5%;
+        padding-top: 5%;
+        & > .title {
+          font-size: 5rem;
+          font-weight: 400;
+          color: $dark-blue;
+          text-transform: uppercase;
+          line-height: 1.25;
+          text-align: center;
+          margin: 0;
+          margin-block-start: 0;
+          margin-block-end: 0;
+        }
+        & > .subtitle {
+          font-size: 3rem;
+          font-weight: 400;
+          color: #fff;
+          line-height: 1.25;
+          text-align: center;
+          font-style: italic;
+          margin: 0;
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-top: -10px;
+        }
+        & > .supports {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          margin-top: 1.5rem;
+
+          & > .brand {
+            background: #fff;
+            padding: 0.25rem .5rem;
+            border-radius: 8px;
+          }
+        }
+
+        & > .promotion {
+          margin-top: 4rem;
+          & .title {
+            font-size: 2rem;
+            color: $dark-blue;
+            font-weight: 800;
+          }
+          & .subtitle {
+            font-size: 2rem;
+            color: $gold;
+            font-weight: 800;
+            font-style: italic;
+          }
+          & .paragraph {
+            font-size: 1.25rem;
+            color: #fff;
+            font-weight: 800;
+            padding-bottom: 1rem;
+          }
+          & .brands {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            & .brand {
+              padding: .375rem 1rem;
+              border: 1px solid #fff;
+              border-radius: 8px;
+              color: #fff;
+            }
+          }
+          & small {
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* Shared Buttons */
+.btn-primary {
+  cursor: pointer;
+  background-color: $orange;
+  color: #fff;
+  border: 1px solid $orange;
+  border-radius: 30px;
+  padding: .675rem 1.25rem;
+  font-size: 0.813rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #fff;
+    color: $orange;
+  }
+}
+
+.btn-icon {
+  cursor: pointer;
+  color: #fff;
+  padding: .45rem .5rem;
+  font-size: 0.813rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  &:hover {
+    border-bottom: 3px solid $background;
+  }
+}
+
+.button-popover {
+  text-transform: capitalize;
+  background-color: #373737;
+  color: #fff;
+  border-radius: 8px;
+  font-size: .675rem;
+}
