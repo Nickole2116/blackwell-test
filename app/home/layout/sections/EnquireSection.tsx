@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react"
+import { z } from "zod"
 import Input from "@/app/components/shared/Input"
 import Button from "@/app/components/shared/Button"
 import Select from "@/app/components/shared/Select"
@@ -15,6 +16,14 @@ type FormState = {
 
 type FormErrors = Partial<FormState>
 
+const enquirySchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email format"),
+  mobile: z.string().min(1, "Mobile number is required"),
+  country: z.string().min(1, "Country is required"),
+  message: z.string().min(1, "Message is required")
+})
+
 export default function EnquireSection() {
 
   const [form, setForm] = useState<FormState>({
@@ -25,14 +34,16 @@ export default function EnquireSection() {
     message: ''
   })
 
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+
   const options = [
     { label: "Malaysia", value: "my" },
     { label: "Singapore", value: "sg" },
     { label: "Japan", value: "jp" },
     { label: "Thailand", value: "th" }
   ]
-
-  const [errors, setErrors] = useState<FormErrors>({})
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -48,34 +59,21 @@ export default function EnquireSection() {
 
   const validate = (): FormErrors => {
 
-    let newErrors: FormErrors = {}
+    const result = enquirySchema.safeParse(form)
 
-    if (!form.name.trim()) {
-      newErrors.name = "Name is required"
-    }
+    if (result.success) return {}
 
-    if (!form.email.trim()) {
-      newErrors.email = "Email is required"
-    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
-      newErrors.email = "Invalid email format"
-    }
+    const newErrors: FormErrors = {}
 
-    if (!form.mobile.trim()) {
-      newErrors.mobile = "Mobile number is required"
-    }
-
-    if (!form.country.trim()) {
-      newErrors.country = "Country is required"
-    }
-
-    if (!form.message.trim()) {
-      newErrors.message = "Message is required"
-    }
+    result.error.issues.forEach(issue => {
+      const field = issue.path[0] as keyof FormState
+      newErrors[field] = issue.message
+    })
 
     return newErrors
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault()
 
@@ -89,16 +87,40 @@ export default function EnquireSection() {
 
       document
         .querySelector(`[name="${firstError}"]`)
-        ?.scrollIntoView({ behavior: "smooth" })
+        ?.scrollIntoView({ behavior: "smooth", block: "center" })
 
       return
     }
 
     setErrors({})
+    setLoading(true)
 
-    console.log("Form submitted:", form)
+    try {
 
-    alert("Enquiry submitted successfully!")
+      // simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      console.log("Form submitted:", form)
+
+      setSuccess(true)
+
+      setForm({
+        name: '',
+        email: '',
+        mobile: '',
+        country: '',
+        message: ''
+      })
+
+    } catch (error) {
+
+      alert("Something went wrong.")
+
+    } finally {
+
+      setLoading(false)
+
+    }
 
   }
 
@@ -108,9 +130,16 @@ export default function EnquireSection() {
 
       <div className="enquire-box">
 
+        {success && (
+          <div className="success-message">
+            Thank you! Your enquiry has been submitted.
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="enquire-form">
 
           <div className="form-row">
+
             <Input
               label="Name"
               name="name"
@@ -129,9 +158,11 @@ export default function EnquireSection() {
               onChange={handleChange}
               error={errors.email}
             />
+
           </div>
 
           <div className="form-row">
+
             <Input
               label="Mobile No."
               name="mobile"
@@ -155,11 +186,7 @@ export default function EnquireSection() {
             />
 
           </div>
-          
 
-          
-
-          
           <Input
             label="Message"
             type="textarea"
@@ -172,7 +199,9 @@ export default function EnquireSection() {
           />
 
           <Button type="submit">
-            Submit
+
+            {loading ? "Submitting..." : "Submit"}
+
           </Button>
 
         </form>
