@@ -400,6 +400,50 @@ body {
     position: relative;
     padding: 2rem 0;
     min-height: 100vh;
+
+    & .link-box {
+      min-height: 300px;
+
+      & .card {
+        border: 1px solid $orange;
+        border-radius: 30px;
+        min-height: 200px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        & img {
+          width: 180px;
+          height: auto;
+        }
+        & span {
+          display: block;
+          color: #fff;
+          font-weight: 800;
+          font-size: 1.25rem;
+        }
+
+        & .arrow {
+          position: absolute;
+          right: -2rem;
+          width: 100px;
+          height: 100px;
+          background: $background;
+          z-index: 10;
+          transform: translateY(50%) translateX(30px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          & img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+      }
+    }
   }
   & > .why-section {
     position: relative;
@@ -545,4 +589,22 @@ body {
   color: #fff;
   border-radius: 8px;
   font-size: .675rem;
+}
+
+
+/* Shared Components */
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(.22,.61,.36,1);
+}
+
+.slide {
+  flex: 0 0 33.333%;
+  padding: 0 12px;
 }
