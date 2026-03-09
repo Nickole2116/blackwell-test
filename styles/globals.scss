@@ -401,6 +401,10 @@ body {
     padding: 2rem 0;
     min-height: 100vh;
 
+    & > .bigtitle {
+      padding-bottom: 2rem;
+    }
+
     & .link-box {
       min-height: 300px;
 
@@ -597,6 +601,30 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
+  
+
+  & .slider-nav {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    &.prev {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      transform: translateY(110px);
+    }
+    &.next {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      transform: translateY(110px);
+    }
+  }
 }
 
 .slider-track {
