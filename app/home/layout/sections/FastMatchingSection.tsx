@@ -9,7 +9,7 @@ export default function FastMatchingSection() {
         <div className="fast-container">
             <div className="phone">
                 <video
-                    className="hand"
+                    className="phone"
                     width={200}
                     height={200}
                     autoPlay
