@@ -6,6 +6,7 @@ import FastMatchingSection from "./sections/FastMatchingSection";
 import LinkMT4Section from "./sections/LinkMT4Section";
 import NavigateSection from "./sections/NavigateSection";
 import TradeProSection from "./sections/TradeProSection";
+import LazySection from "@/app/components/shared/LazySection";
 
 export default function Body() {
 
@@ -18,8 +19,12 @@ export default function Body() {
 
             {/** Fast Matching */}
             <section className="fast-section">
+            <LazySection>
                 <FastMatchingSection />
+            </LazySection>
             </section>
+            
+            
 
             {/** Easy Analysis */}
             <section className="easy-section">

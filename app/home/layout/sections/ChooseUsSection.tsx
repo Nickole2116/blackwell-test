@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Button from "@/app/components/shared/Button";
+import { useI18n } from '@/context/I18nContext'
 
 
 export default function ChooseUsSection() {
+    const { t } = useI18n()
+
     return <>
         <div className="bigtitle">Why Choose Us?</div>
         
@@ -32,7 +35,7 @@ export default function ChooseUsSection() {
         </div>
 
         <div className="text-center">
-            <Button variant="primary">Register Now</Button>
+            <Button variant="primary">{t('button.register_now')}</Button>
 
         </div>
     </>

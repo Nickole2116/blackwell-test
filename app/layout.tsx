@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { rotis } from "./fonts"
+import { I18nProvider } from '@/context/I18nContext'
 
 import "../styles/globals.scss"
 
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rotis.className}`}>
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );
