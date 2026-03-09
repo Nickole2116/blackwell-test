@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Input from "@/app/components/shared/Input"
 import Button from "@/app/components/shared/Button"
+import Select from "@/app/components/shared/Select"
 
 type FormState = {
   name: string
@@ -23,6 +24,13 @@ export default function EnquireSection() {
     country: '',
     message: ''
   })
+
+  const options = [
+    { label: "Malaysia", value: "my" },
+    { label: "Singapore", value: "sg" },
+    { label: "Japan", value: "jp" },
+    { label: "Thailand", value: "th" }
+  ]
 
   const [errors, setErrors] = useState<FormErrors>({})
 
@@ -102,43 +110,56 @@ export default function EnquireSection() {
 
         <form onSubmit={handleSubmit} className="enquire-form">
 
-          <Input
-            label="Name"
-            name="name"
-            value={form.name}
-            placeholder="Enter your name"
-            onChange={handleChange}
-            error={errors.name}
-          />
+          <div className="form-row">
+            <Input
+              label="Name"
+              name="name"
+              value={form.name}
+              placeholder="Enter your name"
+              onChange={handleChange}
+              error={errors.name}
+            />
 
-          <Input
-            label="Email"
-            type="email"
-            name="email"
-            value={form.email}
-            placeholder="Enter your email"
-            onChange={handleChange}
-            error={errors.email}
-          />
+            <Input
+              label="Email"
+              type="email"
+              name="email"
+              value={form.email}
+              placeholder="Enter your email"
+              onChange={handleChange}
+              error={errors.email}
+            />
+          </div>
 
-          <Input
-            label="Mobile No."
-            name="mobile"
-            value={form.mobile}
-            placeholder="Enter mobile number"
-            onChange={handleChange}
-            error={errors.mobile}
-          />
+          <div className="form-row">
+            <Input
+              label="Mobile No."
+              name="mobile"
+              value={form.mobile}
+              placeholder="Enter mobile number"
+              onChange={handleChange}
+              error={errors.mobile}
+            />
 
-          <Input
-            label="Country of Residence"
-            name="country"
-            value={form.country}
-            placeholder="Enter country"
-            onChange={handleChange}
-            error={errors.country}
-          />
+            <Select
+              options={options}
+              value={form.country}
+              searchable
+              placeholder="Select country"
+              onChange={(value) =>
+                setForm(prev => ({
+                  ...prev,
+                  country: value
+                }))
+              }
+            />
 
+          </div>
+          
+
+          
+
+          
           <Input
             label="Message"
             type="textarea"
