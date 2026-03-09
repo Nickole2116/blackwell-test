@@ -285,6 +285,37 @@ body {
     & > .bigsubtitle {
       padding-bottom: 2rem;
     }
+    & > .analysis-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+      & > .bg {
+        position: relative;
+      }
+      & > .subpop {
+        position: absolute;
+        top: 0;
+        
+        & > .c1 {
+          transform: translateX(-10px) translateY(-20px);
+        }
+        & > .c2 {
+          transform: translateX(150px) translateY(-40px);
+        }
+        & > .c3 {
+          transform: translateX(-120px) translateY(-60px);
+        }
+        & > .c4 {
+          transform: translateX(150px) translateY(-100px);
+        }
+        & > .c5 {
+          transform: translateX(-150px) translateY(-120px);
+        }
+      }
+    }
+    
   }
   & > .trade-section {
     position: relative;
