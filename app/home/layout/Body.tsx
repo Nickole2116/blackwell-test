@@ -1,3 +1,5 @@
+'use client'
+
 import ChooseUsSection from "./sections/ChooseUsSection";
 import CopyTradeSection from "./sections/CopyTradeSection";
 import EasyAnalysisSection from "./sections/EasyAnalysisSection";
@@ -8,7 +10,10 @@ import NavigateSection from "./sections/NavigateSection";
 import TradeProSection from "./sections/TradeProSection";
 import LazySection from "@/app/components/shared/LazySection";
 
+
 export default function Body() {
+
+    
 
     return <>
         <div className="body">
@@ -56,6 +61,8 @@ export default function Body() {
                 <EnquireSection />
             </section>
         </div>
+
+        
         
     </>
 }

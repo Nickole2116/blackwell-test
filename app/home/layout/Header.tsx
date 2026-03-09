@@ -1,10 +1,18 @@
+'use client'
+
 import Image from "next/image";
 import Icon from "@mdi/react";
 import Button from "@/app/components/shared/Button";
 import { mdiGoogle, mdiFacebook, mdiAccount } from "@mdi/js"
 
+type HeaderProps = {
+    setOpenRegister: (value: boolean) => void
+  }
+  
 
-export default function Header() {
+export default function Header({
+    setOpenRegister
+  }: HeaderProps) {
 
     return <>
         <nav className="fixed top-0 left-0 w-full z-50 head">
@@ -45,7 +53,7 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="right-side">
-                        <Button popover="Sign Up Now">
+                        <Button popover="Sign Up Now" onClick={() => setOpenRegister(true)}>
                             Register Now
                         </Button>
                         <Button variant="icon" popover="Login Here">
