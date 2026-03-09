@@ -10,6 +10,7 @@ type ButtonProps = {
   popover?: string
   variant?: 'primary' | 'secondary' | 'icon'
   className?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export default function Button({
@@ -19,6 +20,7 @@ export default function Button({
   popover,
   variant = 'primary',
   className = '',
+  type = 'button'
 }: ButtonProps) {
 
   const [showPopover, setShowPopover] = useState(false)
@@ -40,7 +42,7 @@ export default function Button({
 
       {popover && showPopover && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-4 py-1 button-popover">
-            {popover}
+          {popover}
         </div>
       )}
     </>
@@ -63,7 +65,11 @@ export default function Button({
 
   return (
     <div className="relative inline-block" {...events}>
-      <button onClick={onClick} className={buttonClass}>
+      <button
+        type={type}
+        onClick={onClick}
+        className={buttonClass}
+      >
         {content}
       </button>
     </div>
