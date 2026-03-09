@@ -438,6 +438,64 @@ body {
     position: relative;
     padding: 2rem 0;
     min-height: 100vh;
+
+    & > .bigtitle {
+      padding-bottom: 2rem;
+    }
+
+    & > .navigator-box {
+      & > .nav {
+        display: flex;
+        align-items: center;
+        & > .option {
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          background: #fff;
+          padding: .5rem 1rem;
+          & > .icon { display: block; width: 60px; height: auto; }
+          & > .icon-bolded { display: none; width: 60px; height: auto; }
+
+          &.bolded, &:hover {
+            background: $gold;
+            & > .icon { display: none; }
+          & > .icon-bolded { display: block; }
+          }
+        }
+      }
+      & > .content {
+        background: #fff;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        & > .para {
+          background: $gold;
+          border-radius: 10px;
+          padding: 2rem 1.5rem;
+          & > .title {
+            color: $light-blue;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+          }
+          & > .paragraph {
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
+
+    & > .supports {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      & > .brand {
+        background: #fff;
+        padding: 0.25rem .5rem;
+        border-radius: 8px;
+      }
+    }
   }
   & > .enquire-section {
     position: relative;
