@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Icon from "@mdi/react";
 import Button from "@/app/components/shared/Button";
+import Marquee from "@/app/components/shared/Marquee";
+
 import { mdiTranslateVariant, mdiAccount } from "@mdi/js"
 import { useEffect, useState } from "react"
 import { useI18n } from '@/context/I18nContext'
@@ -114,6 +116,19 @@ export default function Header({
 
                     </div>
             </div>
+            <div className="onlymob">
+                <Marquee speed={50} pauseOnHover={true}>
+                    <div className="flex gap-20 px-10 items-center">
+                        <span>{t('header.promotion')} {t('header.ends_in')} {String(time.days).padStart(2,'0')} {t('header.days')} {String(time.hours).padStart(2,'0')} {t('header.hours')} {String(time.minutes).padStart(2,'0')} {t('header.minutes')}</span>
+                        <span>{t('header.promotion')} {t('header.ends_in')} {String(time.days).padStart(2,'0')} {t('header.days')} {String(time.hours).padStart(2,'0')} {t('header.hours')} {String(time.minutes).padStart(2,'0')} {t('header.minutes')}</span>
+                        <span>{t('header.promotion')} {t('header.ends_in')} {String(time.days).padStart(2,'0')} {t('header.days')} {String(time.hours).padStart(2,'0')} {t('header.hours')} {String(time.minutes).padStart(2,'0')} {t('header.minutes')}</span>
+                        <span>
+                            Browse and copy hundreds of investment strategies developed by master traders! Whether you are a pro or beginner, you can now trade quicker and more confidently.
+                        </span>
+                    </div>
+                </Marquee>
+            </div>
+            
         </nav>
     </>
 }

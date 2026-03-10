@@ -40,6 +40,23 @@ button {
 
   @if $gap != 0 { gap: $gap; }
 }
+.onlyweb { display: block; }
+.onlymob { display: none; }
+.onlywebflex { display: flex; }
+.onlymobflex { display: none; }
+
+@media screen and (max-width: 768px) {
+  .onlyweb,
+  .onlywebflex {
+    display: none !important;
+  }
+  .onlymob {
+    display: block !important;
+  }
+  .onlymobflex {
+    display: flex !important;
+  }
+}
 
 /* Shared Buttons */
 .btn-gradient {
@@ -203,6 +220,32 @@ button {
       }
 
     }
+  }
+
+  /* ---------- Tablet ---------- */
+
+  @media (max-width: 1024px) {
+    max-width: 100vw;
+    & .center-side { display: none !important; }
+
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media (max-width: 768px) {
+    max-width: 100vw;
+    & .center-side { display: none !important; }
+
+    
+
+  }
+
+  /* ---------- Small Mobile ---------- */
+
+  @media (max-width: 480px) {
+    max-width: 100vw;
+    & .center-side { display: none !important; }
+
   }
 
   
@@ -1051,6 +1094,32 @@ button {
 
 .animate-popup {
   animation: popup .25s ease;
+}
+
+
+/* marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(-50%,0,0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll linear infinite;
+
+  /* GPU optimize */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* pause on hover */
+.marquee-hover:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 
