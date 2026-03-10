@@ -3,15 +3,19 @@
 import Image from "next/image";
 import Icon from "@mdi/react";
 import Button from "@/app/components/shared/Button";
-import { mdiGoogle, mdiFacebook, mdiAccount } from "@mdi/js"
+import { mdiTranslateVariant, mdiAccount } from "@mdi/js"
 
 type HeaderProps = {
-    setOpenRegister: (value: boolean) => void
-  }
+    setOpenRegister: (value: boolean) => void,
+    setOpenLogin: (value: boolean) => void
+    setOpenLanguage: (value: boolean) => void
+}
   
 
 export default function Header({
-    setOpenRegister
+    setOpenRegister,
+    setOpenLogin,
+    setOpenLanguage
   }: HeaderProps) {
 
     return <>
@@ -22,7 +26,7 @@ export default function Header({
                     </div>
                     <div className="center-side">
                         <div className="countdown-label">
-                            <span>Promotion <br/>Ends In</span>
+                            <span className="color-subtext">Promotion <br/>Ends In</span>
                         </div>
                         <div className="countdown">
                             <div className="countdown-item">
@@ -53,12 +57,18 @@ export default function Header({
                         </div>
                     </div>
                     <div className="right-side">
-                        <Button popover="Sign Up Now" onClick={() => setOpenRegister(true)}>
+                        
+                        <Button variant="gradient" popover="Sign Up Now" onClick={() => setOpenRegister(true)}>
                             Register Now
                         </Button>
-                        <Button variant="icon" popover="Login Here">
+                        <Button variant="icon" popover="Login Here" onClick={() => setOpenLogin(true)}>
                             <Icon path={mdiAccount} size={1} className="thumbnail" />
+                            <span>Login</span>
                         </Button>
+                        <Button variant="null" popover="Change Language Here" onClick={() => setOpenLanguage(true)}>
+                            <img src="https://flagsapi.com/BE/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                        </Button>
+
                     </div>
             </div>
         </nav>

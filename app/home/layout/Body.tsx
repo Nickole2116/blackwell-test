@@ -24,7 +24,6 @@ export default function Body() {
         <div className="body">
             {/** CopyTrade */}
             <section className="copytrade-section">
-                {user?.firstName}
                 <CopyTradeSection />
             </section>
 

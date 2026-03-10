@@ -2,9 +2,15 @@ import localFont from "next/font/local"
 
 export const rotis = localFont({
   src: [
+    
     {
       path: "../fonts/ATRotisSemiSans-Light.ttf",
       weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ATRotisSemiSans.ttf",
+      weight: "400",
       style: "normal",
     },
     {

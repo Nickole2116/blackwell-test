@@ -12,15 +12,108 @@ body {
   line-height: 1.15;
 }
 
+/* Shared - Nickole Frequencedly-Used */
+@mixin gen-box($bgbox:null, $paddingbox:null, $radius:0) {
+  outline: none !important;
+  background: $bgbox; padding: $paddingbox; 
+  @if $radius != 0 { border-radius: $radius; }
+}
+@mixin gen-text($gentxtcolor: null, $gentxtsize: null, $gentxtweight: 400) {
+  color: $gentxtcolor; font-size: $gentxtsize; font-weight: $gentxtweight;
+}
+@mixin gen-flexbox($flextype: start, $align: center, $gap: 0) {
+  display: flex;
+
+  @if $flextype == start { justify-content: flex-start; } 
+  @else if $flextype == center { justify-content: center; } 
+  @else if $flextype == end { justify-content: flex-end; } 
+  @else { justify-content: $flextype; }
+
+  @if $align == start { align-items: flex-start; } 
+  @else if $align == center { align-items: center; } 
+  @else if $align == end { align-items: flex-end; } 
+  @else { align-items: $align; }
+
+  @if $gap != 0 { gap: $gap; }
+}
+
+/* Shared Buttons */
+.btn-gradient {
+  @include gen-box(linear-gradient(to bottom, $gradient-1, $gradient-2), .675rem 1.25rem , 30px);
+  @include gen-text($text-color, .813rem, 400);
+  cursor: pointer;
+  border: 1px solid $orange;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    @include gen-box(linear-gradient(to bottom, $gradient-2, $gradient-1), .675rem 1.25rem , 30px);
+    @include gen-text($text-color, .813rem, 400);
+  }
+}
+.btn-primary {
+  @include gen-box($orange, .675rem 1.25rem , 30px);
+  @include gen-text($text-color, .813rem, 400);
+  cursor: pointer;
+  border: 1px solid $orange;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  transition: all 0.3s ease;
+  &:hover {
+    @include gen-box($orange, .675rem 1.25rem , 30px);
+    @include gen-text($text-color, .813rem, 400);
+  }
+}
+.btn-null {
+  @include gen-box(transparent, 0.125rem .5rem , 0px);
+  @include gen-text($text-color, .813rem, 400);
+  @include gen-flexbox(center, center, .5rem );
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    @include gen-box(transparent, 0.125rem .5rem , 0px);
+    @include gen-text($text-color, .813rem, 400);
+  }
+}
+
+.btn-icon {
+  cursor: pointer;
+  color: #fff;
+  padding: .45rem .5rem;
+  font-size: 0.813rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  &:hover {
+    border-bottom: 3px solid $background;
+  }
+}
+
+.button-popover {
+  text-transform: capitalize;
+  background-color: #373737;
+  color: #fff;
+  border-radius: 8px;
+  font-size: .675rem;
+}
+
+
 /* Landing Content */
 .head {
   background-color: $header-background;
   padding: .5rem 1.25rem;
-  min-height: 60px;
+  min-height: $header-height;
   
 
   & > .container {
-    max-width: 1520px;
+    max-width: $content-maxwidth;
     & > .left-side {
       display: flex;
       align-items: center;
@@ -66,7 +159,7 @@ body {
           & .value {
             display: flex;
             font-size: 1.75rem;
-            font-weight: 400;
+            font-weight: 300;
             color: #fff;
             letter-spacing: .375rem;
           }
@@ -74,12 +167,13 @@ body {
             display: flex;
             font-size: .813rem;
             font-weight: 400;
-            color: #fff;
+            color: $subtext-color;
           }
         }
 
         & .countdown-separator {
-          font-size: 1.5rem;
+          padding-top: .25px;
+          font-size: 1.75rem;
           font-weight: 400;
           color: #fff;
           align-self: start;
@@ -95,9 +189,13 @@ body {
       justify-content: flex-end;
       gap: .375rem;
       width: 20%;
+      & img.locate {
+        width: 25px;
+        height: 25px;
+      }
 
       & .thumbnail {
-        color: #b4b4b4;
+        color: $grey;
       }
 
     }
@@ -558,46 +656,6 @@ body {
 
 
 
-/* Shared Buttons */
-.btn-primary {
-  cursor: pointer;
-  background-color: $orange;
-  color: #fff;
-  border: 1px solid $orange;
-  border-radius: 30px;
-  padding: .675rem 1.25rem;
-  font-size: 0.813rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  &:hover {
-    background-color: #fff;
-    color: $orange;
-  }
-}
-
-.btn-icon {
-  cursor: pointer;
-  color: #fff;
-  padding: .45rem .5rem;
-  font-size: 0.813rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border-radius: 0;
-  border-bottom: 3px solid transparent;
-  &:hover {
-    border-bottom: 3px solid $background;
-  }
-}
-
-.button-popover {
-  text-transform: capitalize;
-  background-color: #373737;
-  color: #fff;
-  border-radius: 8px;
-  font-size: .675rem;
-}
 
 
 /* Shared Components */
@@ -784,3 +842,7 @@ body {
 .animate-popup {
   animation: popup .25s ease;
 }
+
+
+/* Shared typographs */
+.color-subtext { color: $subtext-color; }
