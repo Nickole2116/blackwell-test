@@ -11,6 +11,9 @@ body {
 * {
   line-height: 1.15;
 }
+button {
+  line-height: 1;
+}
 
 /* Shared - Nickole Frequencedly-Used */
 @mixin gen-box($bgbox:null, $paddingbox:null, $radius:0) {
@@ -113,6 +116,7 @@ body {
   
 
   & > .container {
+
     max-width: $content-maxwidth;
     & > .left-side {
       display: flex;
@@ -833,6 +837,17 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-blink {
+  animation: blink 1s ease infinite;
 }
 
 .animate-fade {
