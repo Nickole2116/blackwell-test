@@ -5,8 +5,7 @@ import Header from "./layout/Header";
 import Body from "./layout/Body";
 import Footer from "./layout/Footer";
 import { useState } from "react"
-import Popup from "@/app/components/shared/Popup"
-import Button from "@/app/components/shared/Button"
+import RegisterPopup from "../components/popup/RegisterPopup";
 
 
 export default function HomePage() {
@@ -25,23 +24,8 @@ export default function HomePage() {
       {/** Footer */}
       <Footer />
 
-      <Popup open={open} onClose={() => setOpen(false)} size="lg">
+      <RegisterPopup open={open} onClose={() => setOpen(false)} />
 
-            <h2 className="text-2xl font-bold mb-4">
-            Welcome
-            </h2>
-
-            <p className="text-gray-600">
-            This is a reusable popup component.
-            </p>
-
-            <div className="mt-6 flex gap-3">
-            <Button onClick={() => setOpen(false)}>
-                Close
-            </Button>
-            </div>
-
-      </Popup>
     </>
   );
 }

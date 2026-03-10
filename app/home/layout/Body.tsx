@@ -9,16 +9,22 @@ import LinkMT4Section from "./sections/LinkMT4Section";
 import NavigateSection from "./sections/NavigateSection";
 import TradeProSection from "./sections/TradeProSection";
 import LazySection from "@/app/components/shared/LazySection";
+import { useAuthStore } from "@/store/authStore"
 
 
 export default function Body() {
-
-    
+    const user = useAuthStore((state) => state.user)
+    if (user) {
+        console.log("User logged in:", user)
+      } else {
+        console.log("User not logged in")
+      }
 
     return <>
         <div className="body">
             {/** CopyTrade */}
             <section className="copytrade-section">
+                {user?.firstName}
                 <CopyTradeSection />
             </section>
 
