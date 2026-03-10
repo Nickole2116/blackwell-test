@@ -1,13 +1,16 @@
 'use client'
 
 import Image from "next/image";
+import { useI18n } from '@/context/I18nContext'
 
 
 export default function FastMatchingSection() {
+    const { t } = useI18n()
+
     return <>
-        <div className="bigtitle">Fast Matching</div>
+        <div className="bigtitle">{t('land.fm_title')}</div>
         <div className="bigsubtitle">
-            Zero in on your ideal Master effortlessly. Sort by performance and drawdown levels or discover opportunities from new signals with our smart filters. Still can’t decide? Simply head over to Spotlight for quality signals curated by us.
+            {t('land.fm_subtitle')}
         </div>
         <div className="fast-container">
             <div className="phone">
@@ -27,12 +30,12 @@ export default function FastMatchingSection() {
 
             <div className="content">
                 <ul>
-                    <li>Spotlight</li>
-                    <li>Top Strategies</li>
-                    <li>Low Drawdown</li>
-                    <li>Medium Drawdown</li>
-                    <li>High Drawdown</li>
-                    <li>New Strategies</li>
+                    <li>{t('land.fm_1')}</li>
+                    <li>{t('land.fm_2')}</li>
+                    <li>{t('land.fm_3')}</li>
+                    <li>{t('land.fm_4')}</li>
+                    <li>{t('land.fm_5')}</li>
+                    <li>{t('land.fm_6')}</li>
                 </ul>
 
             </div>

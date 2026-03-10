@@ -10,28 +10,28 @@ export default function ChooseUsSection() {
 
     return <>
         <Image src="/blackwell/bg-2.png" alt="bg-1" width={800} height={800} className="bg-2" />
-        <div className="bigtitle">Why Choose Us?</div>
+        <div className="bigtitle">{t('land.wcu')}</div>
         
         <div className="choose-box">
             <div className="list">
                 <Image src="/blackwell/choose/icon-1.png" alt="App Store" width={100} height={100} className="icon" />
-                <b>Regulated</b>
-                <p>The copy trading platform is regulated. Our technology partner is regulated. And so are we, as a brokerage. We operate under strict compliance because your trust and peace of mind are everything.</p>
+                <b>{t('land.wcu_1')}</b>
+                <p>{t('land.wcu_1_sub')}</p>
             </div>
             <div className="list">
                 <Image src="/blackwell/choose/icon-2.png" alt="App Store" width={100} height={100} className="icon" />
-                <b>0 Commissions</b>
-                <p>When investing, the small margins matter. Blackwell Invest offers 0 commissions investing, and 0 cost to install our app.</p>
+                <b>{t('land.wcu_2')}</b>
+                <p>{t('land.wcu_2_sub')}</p>
             </div>
             <div className="list">
                 <Image src="/blackwell/choose/icon-3.png" alt="App Store" width={100} height={100} className="icon" />
-                <b>User-friendly</b>
-                <p>With an intuitive interface, easy trade execution, and hassle-free management, copying top traders has never been simpler. Trade smarter, not harder!</p>
+                <b>{t('land.wcu_3')}</b>
+                <p>{t('land.wcu_3_sub')}</p>
             </div>
             <div className="list">
                 <Image src="/blackwell/choose/icon-4.png" alt="App Store" width={100} height={100} className="icon" />
-                <b>Tier 1 liquidity</b>
-                <p>Blackwell Invest sources the best liquidity to provide a deep product range and broad market access. Fast order execution and transparent pricing.</p>
+                <b>{t('land.wcu_4')}</b>
+                <p>{t('land.wcu_4_sub')}</p>
             </div>
         </div>
 
@@ -45,7 +45,7 @@ export default function ChooseUsSection() {
         </div>
 
         <div className="text-center mt-[2rem]">
-            <Button variant="primary">Register Now</Button>
+            <Button variant="primary">{t('button.register_now')}</Button>
 
         </div>
     </>

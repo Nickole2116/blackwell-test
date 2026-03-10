@@ -8,6 +8,8 @@ import Marquee from "@/app/components/shared/Marquee";
 import { mdiTranslateVariant, mdiAccount } from "@mdi/js"
 import { useEffect, useState } from "react"
 import { useI18n } from '@/context/I18nContext'
+import { useAuthStore } from "@/store/authStore"
+
 
 type HeaderProps = {
     setOpenRegister: (value: boolean) => void,
@@ -23,6 +25,9 @@ export default function Header({
   }: HeaderProps) {
 
     const { t } = useI18n()
+    const user = useAuthStore((state) => state.user)
+    const logout = useAuthStore((state) => state.logout)
+
 
     const [time, setTime] = useState({
         days: 0,
@@ -101,15 +106,27 @@ export default function Header({
                             </div>
                         </div>
                     </div>
-                    <div className="right-side">
+                    <div className="right-side onlywebflex">
                         
-                        <Button variant="gradient" popover="Sign Up Now" onClick={() => setOpenRegister(true)}>
-                            {t('button.register_now')}
-                        </Button>
-                        <Button variant="icon" popover="Login Here" onClick={() => setOpenLogin(true)}>
-                            <Icon path={mdiAccount} size={1} className="thumbnail" />
-                            <span>{t('button.login')}</span>
-                        </Button>
+                        {user ? <>
+                            <Button variant="icon" popover={user.email}>
+                                <Icon path={mdiAccount} size={1} className="thumbnail" />
+                                <span className="ellipsify" style={{ maxWidth: '80px' }}>{user.email}</span>
+                            </Button>
+                            <Button variant="gradient" popover="Sign Up Now" onClick={() => logout()}>
+                                {t('button.logout')}
+                            </Button>
+                        
+                        </> : <>
+                            <Button variant="gradient" popover="Sign Up Now" onClick={() => setOpenRegister(true)}>
+                                {t('button.register_now')}
+                            </Button>
+                            <Button variant="icon" popover="Login Here" onClick={() => setOpenLogin(true)}>
+                                <Icon path={mdiAccount} size={1} className="thumbnail" />
+                                <span>{t('button.login')}</span>
+                            </Button>
+                        </>}
+                        
                         <Button variant="null" popover="Change Language Here" onClick={() => setOpenLanguage(true)}>
                             <img src="https://flagsapi.com/GB/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
                         </Button>

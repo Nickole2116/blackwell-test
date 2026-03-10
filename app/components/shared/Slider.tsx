@@ -1,6 +1,9 @@
 'use client'
 
 import { ReactNode, useState, useEffect } from "react"
+import Icon from "@mdi/react";
+import { mdiChevronLeft, mdiChevronRight } from "@mdi/js"
+
 
 type SliderProps = {
   children: ReactNode[]
@@ -38,7 +41,7 @@ export default function Slider({
     <div className="slider">
 
       <button className="slider-nav prev" onClick={prev}>
-        ‹
+        <Icon path={mdiChevronLeft} size={1} />
       </button>
 
       <div
@@ -55,7 +58,7 @@ export default function Slider({
       </div>
 
       <button className="slider-nav next" onClick={next}>
-        ›
+        <Icon path={mdiChevronRight} size={1} />
       </button>
 
     </div>

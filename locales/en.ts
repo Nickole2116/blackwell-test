@@ -7,13 +7,74 @@ export default {
       minutes: "Minutes",
       seconds: "Seconds"
     },
-    home: {
-      title: "Welcome to Blackwell",
-      description: "This is a landing page"
+    land: {
+      copytrade: "Copy Trading",
+      w_bi: "with Blackwell Invest",
+      choose_n_trade: "Choose & Trade",
+      readytogo_str: "Ready-To-Go Strategies",
+      sub_1: "Browse and copy hundreds of investment strategies developed by master traders! Whether you are a pro or beginner, you can now trade quicker and more confidently.",
+      forex: "Forex",
+      precious_metals: "Precious Metals",
+      oil: "Oil",
+      indices: "Indices",
+      sub1_reminder: "When you invest, your capital is at risk. Be prudent.",
+
+      fm_title: "Fast Matching",
+      fm_subtitle: "Zero in on your ideal Master effortlessly. Sort by performance and drawdown levels or discover opportunities from new signals with our smart filters. Still can’t decide? Simply head over to Spotlight for quality signals curated by us.",
+      fm_1: "Spotlight",
+      fm_2: "Top Strategies",
+      fm_3: "Low Drawdown",
+      fm_4: "Medium Drawdown",
+      fm_5: "High Drawdown",
+      fm_6: "New Strategies",
+
+      ea: "Easy Analysis",
+      ea_subtitle: "Instant clarity on the Masters’ profile. Get a snapshot of their trade history, profitability, risk, and portfolio all in one place.",
+
+      tp: "Trade Like a Pro in Minutes",
+      tp_1: 'Install our app, "Blackwell Invest"',
+      tp_2: 'Choose a signal Master and click "Copy"',
+      tp_3: 'Set your trade size preferences',
+      tp_4: 'Click "Agree and Copy"',
+
+      lm: "How to Link MT4 Account",
+      lm_1: 'Install our app, “Blackwell Invest”',
+      lm_2: 'Login OR create a new account',
+      lm_3: 'Click “Account”',
+      lm_4: 'Click “Link an account”',
+      lm_5: 'Select “BlackwellGlobalAsia-Live” server',
+      lm_6: 'Fill in your Blackwell Global trading account OR create a new account',
+      lm_7: 'Click “Copy Trades”',
+      lm_8: 'Click “Done”',
+
+      wcu: "Why Choose Us?",
+      wcu_1: "Regulated",
+      wcu_1_sub: "The copy trading platform is regulated. Our technology partner is regulated. And so are we, as a brokerage. We operate under strict compliance because your trust and peace of mind are everything.",
+      wcu_2: "0 Commissions",
+      wcu_2_sub: "When investing, the small margins matter. Blackwell Invest offers 0 commissions investing, and 0 cost to install our app.",
+      wcu_3: "User-friendly",
+      wcu_3_sub: "With an intuitive interface, easy trade execution, and hassle-free management, copying top traders has never been simpler. Trade smarter, not harder!",
+      wcu_4: "Tier 1 liquidity",
+      wcu_4_sub: "Blackwell Invest sources the best liquidity to provide a deep product range and broad market access. Fast order execution and transparent pricing.",
+
+      na: "Navigate Our App in 5 Clicks",
+      na_1: "Discover",
+      na_1_d: "Explore all the investment Masters available on Blackwell Invest. Dive into their profiles and analyse their profitability at a glance.",
+      na_2: "Activity",
+      na_2_d: "See the past trades made by the signals you are copying from the last 30 days or track their open positions.",
+      na_3: "Trade",
+      na_3_d: "Seamlessly trade oil CFDs, indices, and currency pairs with ease.",
+      na_4: "Positions",
+      na_4_d: "Easily track the status of all your trades and monitor your account metrics in real-time.",
+      na_5: "Account",
+      na_5_d: "Access detailed information about your trading account and monitor profitability.",
+
     },
+    message: {},
     button: {
       submit: "Submit",
       register_now: "Register Now",
-      login: "Login"
+      login: "Login",
+      logout: "Logout"
     }
   }

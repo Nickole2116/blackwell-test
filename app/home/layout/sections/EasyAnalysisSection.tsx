@@ -1,13 +1,16 @@
 'use client'
 
 import Image from "next/image";
+import { useI18n } from '@/context/I18nContext'
 
 
 export default function EasyAnalysisSection() {
+    const { t } = useI18n()
+
     return <>
-        <div className="bigtitle">Easy Analysis</div>
+        <div className="bigtitle">{t('land.ea')}</div>
         <div className="bigsubtitle">
-            Instant clarity on the Masters’ profile. Get a snapshot of their trade history, profitability, risk, and portfolio all in one place.
+            {t('land.ea_subtitle')}
         </div>
 
         <div className="analysis-box">

@@ -57,6 +57,13 @@ button {
     display: flex !important;
   }
 }
+.ellipsify {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  display: inline-block;  
+}
 
 /* Shared Buttons */
 .btn-gradient {
@@ -122,6 +129,8 @@ button {
   color: #fff;
   border-radius: 8px;
   font-size: .675rem;
+  min-width: 100px;
+  max-width: 200px;
 }
 
 
@@ -432,7 +441,7 @@ button {
   & .bigsubtitle {
     color: $gold;
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 400;
     text-align: center;
     max-width: 70vw;
     margin: 0 auto;
@@ -570,6 +579,7 @@ button {
           border-radius: 10px;
           background: $background;
           margin-right: .675rem;
+          cursor: pointer;
           & h2 {
             color: $gold;
             font-size: 3rem;
@@ -631,7 +641,7 @@ button {
         background: $background;
         border-radius: 20px;
         & .s {
-          min-height: 450px;
+          min-height: 451px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -643,6 +653,9 @@ button {
         }
         &:nth-of-type(2) {
           border-top-left-radius: 0;
+        }
+        &:nth-of-type(5) {
+          border-bottom-left-radius: 0;
         }
     
         &:nth-of-type(odd) {
@@ -959,6 +972,7 @@ button {
     z-index: 30;
     color: #fff;
     font-size: 1rem;
+    cursor: pointer;
     &.prev {
       position: absolute;
       left: 20px;
