@@ -722,7 +722,7 @@ button {
       font-family: Arial, Helvetica, sans-serif;
     }
   }
-  & > .why-section {
+  & .why-section {
     position: relative;
     padding: 2rem 0;
     min-height: 90vh;
@@ -773,7 +773,7 @@ button {
       font-family: Arial, Helvetica, sans-serif;
     }
   }
-  & > .navigate-section {
+  & .navigate-section {
     position: relative;
     padding: 2rem 0;
     min-height: 50vh;
@@ -1125,3 +1125,14 @@ button {
 
 /* Shared typographs */
 .color-subtext { color: $subtext-color; }
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .6s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -4,9 +4,10 @@ import { useEffect, useRef, useState, ReactNode } from "react"
 
 type Props = {
   children: ReactNode
+  className?: string
 }
 
-export default function LazySection({ children }: Props) {
+export default function LazySection({ children, className = "" }: Props) {
 
   const ref = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState(false)
@@ -15,23 +16,27 @@ export default function LazySection({ children }: Props) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
-        }
+        setVisible(entry.isIntersecting)
       },
       { threshold: 0.2 }
     )
 
-    if (ref.current) observer.observe(ref.current)
+    const el = ref.current
+    if (el) observer.observe(el)
 
-    return () => observer.disconnect()
+    return () => {
+      if (el) observer.unobserve(el)
+      observer.disconnect()
+    }
 
   }, [])
 
   return (
-    <div ref={ref}>
-      {visible && children}
+    <div
+      ref={ref}
+      className={`${className} ${visible ? "visible" : ""}`}
+    >
+      {children}
     </div>
   )
 }

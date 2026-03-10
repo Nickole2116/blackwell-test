@@ -23,7 +23,7 @@ export default function Body() {
     return <>
         <div className="body">
             {/** CopyTrade */}
-            <LazySection>
+            <LazySection className="fade-section">
             <section className="copytrade-section">
                 
                 <CopyTradeSection />
@@ -32,7 +32,7 @@ export default function Body() {
             </LazySection>
 
             {/** Fast Matching */}
-            <LazySection>
+            <LazySection className="fade-section">
                 <section className="fast-section">
                 
                     <FastMatchingSection />
@@ -43,7 +43,7 @@ export default function Body() {
             
 
             {/** Easy Analysis */}
-            <LazySection>
+            <LazySection className="fade-section">
                 <section className="easy-section">
                     <EasyAnalysisSection />
                 </section>
@@ -51,7 +51,7 @@ export default function Body() {
             
 
             {/** Trade Like a Pro in Minutes */}
-            <LazySection>
+            <LazySection className="fade-section">
                 <section className="trade-section">
                     <TradeProSection />
                 </section>
@@ -59,7 +59,7 @@ export default function Body() {
             
 
             {/** Link MT4 Account */}
-            <LazySection>
+            <LazySection className="fade-section">
                 <section className="mt4-section">
                     <LinkMT4Section />
                 </section>
@@ -67,14 +67,20 @@ export default function Body() {
             
 
             {/** Why Choose Us? */}
-            <section className="why-section">
-                <ChooseUsSection />
-            </section>
+            <LazySection className="fade-section">
+                <section className="why-section">
+                    <ChooseUsSection />
+                </section>
+            </LazySection>
+            
 
             {/** Navigate Our App in 5 Clicks */}
+            <LazySection className="fade-section">
             <section className="navigate-section">
                 <NavigateSection />
             </section>
+            </LazySection>
+            
 
             {/** Enquire Now */}
             <section className="enquire-section">
