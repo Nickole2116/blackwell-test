@@ -258,10 +258,33 @@ button {
   max-width: 1520px;
   margin: 0 auto;
 
+  & .supports {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    position: relative;
+
+    & > .brand {
+      background: #fff;
+      padding: 0.25rem .5rem;
+      border-radius: 8px;
+    }
+
+    & > .regular {
+      width: 150px;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      transform: translateX(14vw) translateY(10vh);
+    }
+  }
+
   & .copytrade-section {
     position: relative;
     padding: 2rem 0;
-    min-height: 80vh;
+    min-height: 90vh;
     & .copytrade-container {
       position: relative;
       & * {
@@ -652,6 +675,15 @@ button {
         border-radius: 8px;
       }
     }
+
+    & .btn-primary {
+      padding: .675rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1.5;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
   }
   & .mt4-section {
     position: relative;
@@ -881,6 +913,17 @@ button {
     & .enquire-box {
       max-width: 80%;
       margin: 0 auto;
+
+      & .success-message {
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 9;
+        padding: 1rem;
+        background: rgba(172, 255, 47, 0.142);
+        border: 1px solid rgb(53, 185, 53);
+        border-radius: 10px;
+        color: #fff;
+      }
     }
 
     & .btn-primary {
@@ -953,7 +996,7 @@ button {
   }
 }
 .form-group {
-  border: 1px solid #fff;
+  border: 1.5px solid #8f9fad;
   position: relative;
   border-radius: 5px;
   & label {
@@ -961,30 +1004,36 @@ button {
     left: 1rem;
     top: .5rem;
     color: #fff;
-    background: $background;
     transition: all .25s ease-in;
+    opacity: 0;
   }
   & .form-input {
-    padding: .5rem 1rem;
+    padding: 1rem 1.125rem;
     outline: none;
     color: #fff;
     width: 100%;
+    font-size: 1.125rem;
 
     &::placeholder {
-      color: transparent;
+      color: #8f9fad;
     }
 
     &.input-error {
-      color: red;
+      color: rgb(255, 117, 117);
     }
   }
   & .error {
-    color: red;
+    color: rgb(255, 117, 117);
+    position: absolute;
+    top: 0.25rem;
+    left: 1.125rem;
+    font-size: .75rem;
   }
 
   &:focus-within {
     & label {
       top: -.675rem;
+      /*opacity: 1;*/
     }
   }
 }
@@ -997,11 +1046,11 @@ button {
 }
 
 .select-trigger {
-  border: 1px solid #ddd;
-  padding: 10px 14px;
+  border: 1px solid #8f9fad;
+  padding: 1rem 1.125rem;
+  font-size: 1.125rem;
   border-radius: 8px;
   cursor: pointer;
-  background: $background;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -1021,7 +1070,7 @@ button {
   width: 100%;
   top: 110%;
   background: white;
-  border: 1px solid #ddd;
+  border: 1px solid #8f9fad;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,.1);

@@ -77,7 +77,7 @@ export default function LinkMT4Section() {
 
                 <div className="card">
                     <Image src="/blackwell/register/step-6.png" alt="Step 6" width={140} height={100} className="step" />
-                    <span>Click “Copy Trades”</span>
+                    <span>Fill in your Blackwell Global trading account OR create a new account</span>
 
                     <div className="arrow">
                         <Image src="/blackwell/arrow.png" alt="arrow" width={100} height={100} className="arrow-img" />
@@ -86,6 +86,11 @@ export default function LinkMT4Section() {
 
                 <div className="card">
                     <Image src="/blackwell/register/step-7.png" alt="Step 7" width={140} height={100} className="step" />
+                    <span>Click “Copy Trades”</span>
+
+                </div>
+                <div className="card">
+                    <Image src="/blackwell/register/step-8.png" alt="Step 7" width={140} height={100} className="step" />
                     <span>Click “Done”</span>
 
                 </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image";
+import Button from "@/app/components/shared/Button";
 
 
 export default function TradeProSection() {
@@ -57,6 +58,11 @@ export default function TradeProSection() {
             <div className="brand">
                 <Image src="/blackwell/google-play.jpg" alt="Google Play" width={120} height={100} className="google-play" />
             </div>
+        </div>
+
+        <div className="text-center mt-[2rem]">
+            <Button variant="primary">Register Now</Button>
+
         </div>
     </>
 }

@@ -6,6 +6,9 @@ import Image from "next/image";
 export default function FastMatchingSection() {
     return <>
         <div className="bigtitle">Fast Matching</div>
+        <div className="bigsubtitle">
+            Zero in on your ideal Master effortlessly. Sort by performance and drawdown levels or discover opportunities from new signals with our smart filters. Still can’t decide? Simply head over to Spotlight for quality signals curated by us.
+        </div>
         <div className="fast-container">
             <div className="phone">
                 <video

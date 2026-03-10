@@ -57,7 +57,7 @@ export default function NavigateSection() {
                     <div className="con">
                         <div className="title">Trade</div>
                         <div className="paragraph">
-                            Seamlessly trade oil CFDs, indices, and currency pairs with ease.
+                            Seamlessly trade oil CFDs, indices, and currency pairs with ease. 
                         </div>
                     </div>
                     <Image src="/blackwell/reason/reason-3.png" alt="icon" width={330} height={300} className="thumb" />

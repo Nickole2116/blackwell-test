@@ -22,7 +22,6 @@ const enquirySchema = z.object({
   email: z.string().email("Invalid email format"),
   mobile: z.string().min(1, "Mobile number is required"),
   country: z.string().min(1, "Country is required"),
-  message: z.string().min(1, "Message is required")
 })
 
 export default function EnquireSection() {
@@ -41,9 +40,9 @@ export default function EnquireSection() {
 
   const options = [
     { label: "Malaysia", value: "my" },
-    { label: "Singapore", value: "sg" },
-    { label: "Japan", value: "jp" },
-    { label: "Thailand", value: "th" }
+    { label: "Vietnam", value: "vn" },
+    { label: "Thailand", value: "th" },
+    { label: "Others", value: "-" }
   ]
 
   const handleChange = (
@@ -113,6 +112,12 @@ export default function EnquireSection() {
         message: ''
       })
 
+      setTimeout(() => {
+        setSuccess(false)
+      }, 3000)
+
+      
+
     } catch (error) {
 
       alert("Something went wrong.")
@@ -149,7 +154,7 @@ export default function EnquireSection() {
               label="Name"
               name="name"
               value={form.name}
-              placeholder="Enter your name"
+              placeholder="Name"
               onChange={handleChange}
               error={errors.name}
             />
@@ -159,7 +164,7 @@ export default function EnquireSection() {
               type="email"
               name="email"
               value={form.email}
-              placeholder="Enter your email"
+              placeholder="Email"
               onChange={handleChange}
               error={errors.email}
             />
@@ -172,7 +177,7 @@ export default function EnquireSection() {
               label="Mobile No."
               name="mobile"
               value={form.mobile}
-              placeholder="Enter mobile number"
+              placeholder="Mobile No."
               onChange={handleChange}
               error={errors.mobile}
             />
@@ -181,7 +186,7 @@ export default function EnquireSection() {
               options={options}
               value={form.country}
               searchable
-              placeholder="Select country"
+              placeholder="Country"
               onChange={(value) =>
                 setForm(prev => ({
                   ...prev,
@@ -198,7 +203,7 @@ export default function EnquireSection() {
             name="message"
             rows={4}
             value={form.message}
-            placeholder="Enter your message here"
+            placeholder="Message (Optional)"
             onChange={handleChange}
             error={errors.message}
           />
