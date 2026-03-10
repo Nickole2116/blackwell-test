@@ -44,7 +44,7 @@ export default function Slider({
       <div
         className="slider-track"
         style={{
-          transform: `translateX(-${index * 33.333}%)`
+          transform: `translateX(-${index * 25}%)`
         }}
       >
         {children.map((child, i) => (

@@ -23,33 +23,48 @@ export default function Body() {
     return <>
         <div className="body">
             {/** CopyTrade */}
+            <LazySection>
             <section className="copytrade-section">
+                
                 <CopyTradeSection />
+                
             </section>
+            </LazySection>
 
             {/** Fast Matching */}
-            <section className="fast-section">
             <LazySection>
-                <FastMatchingSection />
+                <section className="fast-section">
+                
+                    <FastMatchingSection />
+                
+                </section>
             </LazySection>
-            </section>
             
             
 
             {/** Easy Analysis */}
-            <section className="easy-section">
-                <EasyAnalysisSection />
-            </section>
+            <LazySection>
+                <section className="easy-section">
+                    <EasyAnalysisSection />
+                </section>
+            </LazySection>
+            
 
             {/** Trade Like a Pro in Minutes */}
-            <section className="trade-section">
-                <TradeProSection />
-            </section>
+            <LazySection>
+                <section className="trade-section">
+                    <TradeProSection />
+                </section>
+            </LazySection>
+            
 
             {/** Link MT4 Account */}
-            <section className="mt4-section">
-                <LinkMT4Section />
-            </section>
+            <LazySection>
+                <section className="mt4-section">
+                    <LinkMT4Section />
+                </section>
+            </LazySection>
+            
 
             {/** Why Choose Us? */}
             <section className="why-section">

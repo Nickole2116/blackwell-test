@@ -14,11 +14,13 @@ export default function CopyTradeSection() {
                 <h4 className="subtitle">with Blackwell Invest</h4>
                 <div className="supports">
                     <div className="brand">
-                        <Image src="/blackwell/app-store.jpg" alt="App Store" width={100} height={100} className="app-store" />
+                        <Image src="/blackwell/app-store.jpg" alt="App Store" width={120} height={100} className="app-store" />
                     </div>
                     <div className="brand">
-                        <Image src="/blackwell/google-play.jpg" alt="Google Play" width={100} height={100} className="google-play" />
+                        <Image src="/blackwell/google-play.jpg" alt="Google Play" width={120} height={100} className="google-play" />
                     </div>
+                    <Image src="/blackwell/regular.png" alt="App Store" width={100} height={100} className="regular" />
+
                 </div>
 
                 {/** Seconds Section */}

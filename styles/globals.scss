@@ -5,6 +5,7 @@
 
 
 body {
+  overflow-x: hidden;
   background: $background;
   font-family: "ATRotisSemiSans", Arial, Helvetica, sans-serif;
 }
@@ -59,7 +60,6 @@ button {
   @include gen-text($text-color, .813rem, 400);
   cursor: pointer;
   border: 1px solid $orange;
-  text-transform: uppercase;
   letter-spacing: .5px;
   transition: all 0.3s ease;
   &:hover {
@@ -215,15 +215,18 @@ button {
   max-width: 1520px;
   margin: 0 auto;
 
-  & > .copytrade-section {
+  & .copytrade-section {
     position: relative;
     padding: 2rem 0;
-    min-height: 100vh;
-    & > .copytrade-container {
+    min-height: 80vh;
+    & .copytrade-container {
       position: relative;
+      & * {
+        transition: all .25s ease-in-out;
+      }
       & > .hand {
         width: auto;
-        min-height: 900px;
+        min-height: 65vw;
         height: auto;
         max-width: 100%;
         max-height: 100%;
@@ -233,12 +236,13 @@ button {
       }
 
       & > .copytrade-content {
-        padding-left: 45%;
+        padding-left: 50%;
         padding-right: 5%;
-        padding-top: 5%;
+        padding-top: 2%;
         & > .title {
-          font-size: 5rem;
-          font-weight: 400;
+          font-family: sans-serif;
+          font-size: 4.25rem;
+          font-weight: 300;
           color: $dark-blue;
           text-transform: uppercase;
           line-height: 1.25;
@@ -248,8 +252,9 @@ button {
           margin-block-end: 0;
         }
         & > .subtitle {
+          font-family: sans-serif;
           font-size: 3rem;
-          font-weight: 400;
+          font-weight: 300 !important;
           color: #fff;
           line-height: 1.25;
           text-align: center;
@@ -257,19 +262,27 @@ button {
           margin: 0;
           margin-block-start: 0;
           margin-block-end: 0;
-          margin-top: -10px;
         }
         & > .supports {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 1rem;
-          margin-top: 1.5rem;
+          margin-top: 2rem;
+          position: relative;
 
           & > .brand {
             background: #fff;
             padding: 0.25rem .5rem;
             border-radius: 8px;
+          }
+
+          & > .regular {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            transform: translateX(14vw) translateY(10vh);
           }
         }
 
@@ -278,36 +291,65 @@ button {
           & .title {
             font-size: 2rem;
             color: $dark-blue;
-            font-weight: 800;
+            font-weight: 400;
+            font-family: sans-serif;
           }
           & .subtitle {
             font-size: 2rem;
             color: $gold;
-            font-weight: 800;
+            font-weight: 500;
             font-style: italic;
+            font-family: Arial, sans-serif;
           }
           & .paragraph {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: #fff;
-            font-weight: 800;
+            font-weight: 600;
+            padding-top: .25rem;
             padding-bottom: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
           }
           & .brands {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             & .brand {
               padding: .375rem 1rem;
               border: 1px solid #fff;
-              border-radius: 8px;
+              border-radius: 10px;
               color: #fff;
+              font-family: sans-serif;
+              font-weight: 600;
+              &:nth-child(1) {
+                border: 1px solid $gold;
+              }
+              &:nth-child(2) {
+                border: 1px solid $orange;
+              }
+              &:nth-child(3) {
+                border: 1px solid red;
+              }
+              &:nth-child(4) {
+                border: 1px solid $dark-blue;
+              }
             }
+          }
+          & .btn-primary {
+            padding: .675rem 1.25rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            letter-spacing: 1.5;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
           }
           & small {
             color: #fff;
             font-size: 1rem;
             margin-top: 1.5rem;
+            font-family: sans-serif;
+            font-style: italic;
           }
         }
       }
@@ -319,18 +361,21 @@ button {
     font-size: 2.5rem;
     font-weight: 800;
     text-align: center;
+    margin-bottom: 0rem;
   }
   & .bigsubtitle {
     color: $gold;
     font-size: 1.5rem;
     font-weight: 800;
     text-align: center;
+    max-width: 70vw;
+    margin: 0 auto;
   }
 
   & .fast-section {
     position: relative;
-    padding: 2rem 0;
-    min-height: 100vh;
+    padding: 2rem 0 3rem;
+    min-height: 50vh;
 
     & > .bigtitle {
       padding-bottom: 2rem;
@@ -341,6 +386,7 @@ button {
       justify-content: center;
       align-items: center;
       gap: 2rem;
+      margin-top: 2.5rem;
       & > .phone {
         background: #fff;
         padding: 1rem 0;
@@ -376,16 +422,16 @@ button {
       }
     }
   }
-  & > .easy-section {
+  & .easy-section {
     position: relative;
     padding: 2rem 0;
-    min-height: 100vh;
+    min-height: 80vh;
 
     & > .bigtitle {
       padding-bottom: 2rem;
     }
     & > .bigsubtitle {
-      padding-bottom: 2rem;
+      padding-bottom: 3.5rem;
     }
     & > .analysis-box {
       display: flex;
@@ -395,46 +441,59 @@ button {
       position: relative;
       & > .bg {
         position: relative;
+        width: 200px;
+        height: auto;
       }
       & > .subpop {
         position: absolute;
         top: 0;
         
         & > .c1 {
-          transform: translateX(-10px) translateY(-20px);
+          transform: translateX(-100px) translateY(-22px);
         }
         & > .c2 {
-          transform: translateX(150px) translateY(-40px);
+          transform: translateX(100px) translateY(-55px);
         }
         & > .c3 {
-          transform: translateX(-120px) translateY(-60px);
+          width: 200px;
+          transform: translateX(-100px) translateY(-100px);
         }
         & > .c4 {
-          transform: translateX(150px) translateY(-100px);
+          width: 200px;
+          transform: translateX(100px) translateY(-135px);
         }
         & > .c5 {
-          transform: translateX(-150px) translateY(-120px);
+          width: 200px;
+          transform: translateX(-100px) translateY(-170px);
         }
       }
     }
     
   }
-  & > .trade-section {
+  & .trade-section {
     position: relative;
-    padding: 2rem 0;
-    min-height: 100vh;
+    padding: 2rem 0 5rem;
+    min-height: 80vh;
     & > .bigtitle {
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
+      margin-top: 16%;
+      z-index: 10;
+      position: relative;
     }
+    & .bg-1 { width: 100%;height: auto; position: absolute; top: 0;z-index: 1; }
     & > .trade-box {
+      z-index: 10;
+      position: relative;
       display: flex;
       align-items: start;
       justify-content: center;
+      margin: 0 auto;
+      max-width: 80%;
       & > .options {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: 2rem;
         background: $background;
         z-index: 10;
         & > .option {
@@ -442,9 +501,9 @@ button {
           align-items: center;
           padding: 1rem;
           border: 1px solid $gold;
-          border-radius: 8px;
+          border-radius: 10px;
           background: $background;
-          margin-right: .5rem;
+          margin-right: .675rem;
           & h2 {
             color: $gold;
             font-size: 3rem;
@@ -457,31 +516,84 @@ button {
             font-weight: 800;
             font-size: 1.125rem;
           }
+          &:nth-child(2n+1) {
+            border: 1px solid $gold;
+            & h2 {
+              color: $gold;
+              font-size: 3rem;
+              font-style: italic;
+              flex: 1;
+            }
+            & span {
+              flex: 4;
+              color: #fff;
+              font-weight: 800;
+              font-size: 1.125rem;
+            }
+          }
+          &:nth-child(2n) {
+            border: 1px solid $orange;
+            & h2 {
+              color: $orange;
+              font-size: 3rem;
+              font-style: italic;
+              flex: 1;
+            }
+            & span {
+              flex: 4;
+              color: #fff;
+              font-weight: 800;
+              font-size: 1.125rem;
+            }
+          }
 
           &.bolded {
             border-right: none;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
             margin-right: -1px;
-            & h2 {}
-            & span {}
+            & span {
+              color: $dark-blue;
+            }
           }
         }
       }
 
       & .content {
         flex: 1;
-        border: 1px solid $gold;
+        display: none;
         background: $background;
-        border-radius: 10px;
+        border-radius: 20px;
         & .s {
-          display: none;
+          min-height: 450px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           & .img {
-            width: 100%;
+            width: auto;
+            height: 100%;
           }
-          &.bolded { display: block; }
+          
+        }
+        &:nth-of-type(2) {
+          border-top-left-radius: 0;
+        }
+    
+        &:nth-of-type(odd) {
+          border: 1px solid $orange;
+        }
+    
+        &:nth-of-type(even) {
+          border: 1px solid $gold;
+        }
+
+
+        &.bolded {
+          display: block;
         }
       }
+
+      
     }
 
     & > .supports {
@@ -498,22 +610,24 @@ button {
       }
     }
   }
-  & > .mt4-section {
+  & .mt4-section {
     position: relative;
     padding: 2rem 0;
-    min-height: 100vh;
+    min-height: 30vh;
 
     & > .bigtitle {
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
     }
 
     & .link-box {
-      min-height: 300px;
+      min-height: 350px;
+      max-width: 80%;
+      margin: 0 auto;
 
       & .card {
         border: 1px solid $orange;
         border-radius: 30px;
-        min-height: 200px;
+        min-height: 350px;
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -529,6 +643,9 @@ button {
           color: #fff;
           font-weight: 800;
           font-size: 1.25rem;
+          margin-top: auto;
+          min-height: 75px;
+          text-align: center;
         }
 
         & .arrow {
@@ -538,7 +655,7 @@ button {
           height: 100px;
           background: $background;
           z-index: 10;
-          transform: translateY(50%) translateX(30px);
+          transform: translateY(100%) translateX(30px);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -548,17 +665,31 @@ button {
           }
         }
 
+        
+
       }
+    }
+
+    & .btn-primary {
+      padding: .675rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1.5;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
     }
   }
   & > .why-section {
     position: relative;
     padding: 2rem 0;
-    min-height: 100vh;
+    min-height: 90vh;
 
     & > .bigtitle {
+      margin-top: -5rem;
       padding-bottom: 2rem;
     }
+    & .bg-2 { width: 100%;height: auto; }
+
 
     & > .choose-box {
       display: flex;
@@ -566,7 +697,10 @@ button {
       flex-direction: column;
       gap: 1rem;
       margin-bottom: 2rem;
+      max-width: 80%;
+      margin: 0 auto 3rem;
       & > .list {
+        width: 100%;
         background: #fff;
         display: flex;
         align-items: center;
@@ -576,24 +710,38 @@ button {
         & .icon {
           width: 70px;
           height: auto;
+          margin-right: 20px;
         }
         & b {
-          min-width: 140px;
+          min-width: 150px;
+          color: $light-blue;
+          font-size: 1.25rem;
         }
         & p {}
       }
+    }
+
+    & .btn-primary {
+      padding: .675rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1.5;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
     }
   }
   & > .navigate-section {
     position: relative;
     padding: 2rem 0;
-    min-height: 100vh;
+    min-height: 50vh;
 
     & > .bigtitle {
       padding-bottom: 2rem;
     }
 
     & > .navigator-box {
+      max-width: 80%;
+      margin: 0 auto 3rem;
       & > .nav {
         display: flex;
         align-items: center;
@@ -601,7 +749,7 @@ button {
           border-top-left-radius: 8px;
           border-top-right-radius: 8px;
           background: #fff;
-          padding: .5rem 1rem;
+          padding: 0rem 1rem;
           & > .icon { display: block; width: 60px; height: auto; }
           & > .icon-bolded { display: none; width: 60px; height: auto; }
 
@@ -617,19 +765,31 @@ button {
         border-radius: 10px;
         border-top-left-radius: 0;
         & > .para {
+          display: none;
           background: $gold;
           border-radius: 10px;
-          padding: 2rem 1.5rem;
-          & > .title {
-            color: $light-blue;
-            font-weight: 800;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+          min-height: 300px;
+          justify-content: space-between;
+          align-items: center;
+          &.bolded { display: flex; }
+          & > .con {
+            padding: 1rem 4rem;
+            & > .title {
+              color: $light-blue;
+              font-weight: 800;
+              font-size: 2rem;
+              margin-bottom: 1.5rem;
+            }
+            & > .paragraph {
+              font-size: 1.125rem;
+            }
           }
-          & > .paragraph {
-            font-size: 1.125rem;
+          & > .thumb {
+            width: 340px;
+            height: 300px;
           }
         }
+        
       }
     }
 
@@ -649,11 +809,44 @@ button {
   }
   & > .enquire-section {
     position: relative;
-    padding: 2rem 0;
-    min-height: 100vh;
+    padding: 22% 0 2rem;
+    min-height: 0vh;
+
+    & .coverimg {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      
+      position: absolute; 
+      top: 0;
+      & .bg-3 { 
+        min-width: 195%;height: auto; 
+        object-fit: cover;
+        object-position: center top;
+        transform: translateX(-23%);
+
+      }
+    }
+    
 
     & > .bigtitle {
       padding-bottom: 2rem;
+      position: relative;
+      z-index: 9;
+    }
+
+    & .enquire-box {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    & .btn-primary {
+      padding: .675rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1.5;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
     }
   }
 }
@@ -673,22 +866,24 @@ button {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #fff;
+    background: #0000007a;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 30;
+    color: #fff;
+    font-size: 1rem;
     &.prev {
       position: absolute;
       left: 20px;
       top: 0;
-      transform: translateY(110px);
+      transform: translateY(150px);
     }
     &.next {
       position: absolute;
       right: 20px;
       top: 0;
-      transform: translateY(110px);
+      transform: translateY(150px);
     }
   }
 }
@@ -699,7 +894,7 @@ button {
 }
 
 .slide {
-  flex: 0 0 33.333%;
+  flex: 0 0 25%;
   padding: 0 12px;
 }
 

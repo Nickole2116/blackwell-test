@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 
 import { useState } from "react"
 import { z } from "zod"
@@ -126,6 +127,10 @@ export default function EnquireSection() {
 
   return (
     <>
+      <div className="coverimg">
+        <Image src="/blackwell/bg-3.png" alt="bg-1" width={3000} height={3000} className="bg-3" />
+      </div>
+
       <div className="bigtitle">Enquire Now</div>
 
       <div className="enquire-box">
@@ -198,11 +203,15 @@ export default function EnquireSection() {
             error={errors.message}
           />
 
-          <Button type="submit">
+          <div className="text-center mt-[2rem]">
+            <Button type="submit">
 
             {loading ? "Submitting..." : "Submit"}
 
-          </Button>
+            </Button>
+          </div>
+
+          
 
         </form>
 

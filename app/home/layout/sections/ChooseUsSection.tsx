@@ -9,6 +9,7 @@ export default function ChooseUsSection() {
     const { t } = useI18n()
 
     return <>
+        <Image src="/blackwell/bg-2.png" alt="bg-1" width={800} height={800} className="bg-2" />
         <div className="bigtitle">Why Choose Us?</div>
         
         <div className="choose-box">
