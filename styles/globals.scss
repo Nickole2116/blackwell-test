@@ -108,19 +108,16 @@ button {
 }
 
 .btn-icon {
+  @include gen-text($text-color, .813rem, 600);
+  @include gen-flexbox(center, center, 0 );
+
   cursor: pointer;
-  color: #fff;
   padding: .45rem .5rem;
-  font-size: 0.813rem;
-  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .5px;
   transition: all 0.3s ease;
   border-radius: 0;
   border-bottom: 3px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: .5rem;
   &:hover {
     border-bottom: 3px solid $background;
@@ -815,9 +812,8 @@ button {
         padding-bottom: 2.5rem;
       }
       & > .analysis-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include gen-flexbox(center, center, 0 );
+
         margin: 0 auto;
         position: relative;
         & > .bg {
@@ -868,11 +864,10 @@ button {
     }
     & .bg-1 { width: 100%;height: auto; position: absolute; top: 0;z-index: 1; }
     & > .trade-box {
+      @include gen-flexbox(center, start, 0 );
+
       z-index: 10;
       position: relative;
-      display: flex;
-      align-items: start;
-      justify-content: center;
       margin: 0 auto;
       max-width: 80%;
       & > .options {
@@ -953,9 +948,8 @@ button {
         border-radius: 20px;
         & .s {
           min-height: 451px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include gen-flexbox(center, center, 0 );
+
           & .img {
             width: auto;
             height: 100%;
@@ -1058,10 +1052,8 @@ button {
     }
 
     & > .supports {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      @include gen-flexbox(center, center, 1rem );
+
       margin-top: 1.5rem;
 
       & > .brand {
@@ -1127,9 +1119,7 @@ button {
           background: $background;
           z-index: 10;
           transform: translateY(100%) translateX(30px);
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include gen-flexbox(center, center, 0 );
           & img {
             width: 100px;
             height: 100px;
@@ -1190,9 +1180,8 @@ button {
             background: $background;
             z-index: 10;
             transform: translateY(100%) translateX(20px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include gen-flexbox(center, center, 0 );
+
             & img {
               width: 80px;
               height: 80px;
@@ -1354,10 +1343,8 @@ button {
     }
 
     & > .supports {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      @include gen-flexbox(center, center, 1rem );
+
       margin-top: 1.5rem;
 
       & > .brand {
@@ -1503,13 +1490,12 @@ button {
   
 
   & .slider-nav {
+    @include gen-flexbox(center, center, 0 );
+
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background: #0000007a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 30;
     color: #fff;
     font-size: 1rem;

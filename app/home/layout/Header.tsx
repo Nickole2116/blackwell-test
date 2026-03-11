@@ -38,7 +38,7 @@ export default function Header({
 
     useEffect(() => {
 
-        const target = new Date("2026-03-12T13:00:00+08:00").getTime()
+        const target = new Date("2026-04-01T13:00:00+08:00").getTime()
       
         const interval = setInterval(() => {
       
