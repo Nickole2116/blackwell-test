@@ -1,3 +1,41 @@
+# Short Notes
+
+## Environment
+
+* Next.js 16.1.6
+* TypeScript
+
+## Libraries / Tools
+
+* **Zod** – form validation
+* **IntersectionObserver API** – lazy loading sections
+* **MUI Icons** – UI icons
+* **i18n** - Localization
+
+## Styling
+
+* **Tailwind CSS**
+* **SCSS** (currently still being structured and refined)
+* Responsive layout for **web and mobile**
+
+## Implementation
+
+* **React useState** for component state management
+* **Multiple locales support** (currently English and Chinese)
+* **Countdown timer** implementation
+* **Basic fade-in animations** for smoother UI transitions
+* **Fake sign-in, sign-out, and register functions** implemented using Promise-based logic to simulate API behavior
+
+## Architecture
+
+* Applied **shared components concept** for better reusability and maintainability
+
+## Notes
+
+For the **main title and subtitle font family**, I was not completely certain which exact font should be used based on the design specification. However, font families have been applied across the project, and some typography follows the mock design as closely as possible.
+
+****************************************************************************
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
