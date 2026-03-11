@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import { z } from "zod"
+import { useI18n } from '@/context/I18nContext'
+
 
 import Popup from "@/app/components/shared/Popup"
 import Input from "@/app/components/shared/Input"
@@ -59,6 +61,7 @@ export default function RegisterPopup({
   open,
   onClose
 }: RegisterPopupProps) {
+  const { t } = useI18n()
 
   const [form, setForm] = useState<FormState>({
     firstName: '',
@@ -171,7 +174,7 @@ export default function RegisterPopup({
     <Popup open={open} onClose={onClose} size="lg">
 
       <h2 className="text-xl font-bold mb-6 color-[#fff]">
-        Sign Up
+        {t('button.register_now')}
       </h2>
 
       <form onSubmit={handleSubmit} className="content">
@@ -180,7 +183,7 @@ export default function RegisterPopup({
           <Input
             label="First Name"
             name="firstName"
-            placeholder="First Name"
+            placeholder={t('land.first_name')}
             value={form.firstName}
             onChange={handleChange}
             error={errors.firstName}
@@ -189,7 +192,7 @@ export default function RegisterPopup({
           <Input
             label="Last Name"
             name="lastName"
-            placeholder="Last Name"
+            placeholder={t('land.last_name')}
             value={form.lastName}
             onChange={handleChange}
             error={errors.lastName}
@@ -201,7 +204,7 @@ export default function RegisterPopup({
         <Input
           label="Email"
           name="email"
-          placeholder="Email Address"
+          placeholder={t('land.email')}
           value={form.email}
           onChange={handleChange}
           error={errors.email}
@@ -210,7 +213,7 @@ export default function RegisterPopup({
         <Input
           label="Mobile"
           name="mobile"
-          placeholder="Mobile No."
+          placeholder={t('land.mobile_no')}
           value={form.mobile}
           onChange={handleChange}
           error={errors.mobile}
@@ -219,7 +222,7 @@ export default function RegisterPopup({
         <Select
           options={options}
           value={form.country}
-          placeholder="Select country"
+          placeholder={t('land.country')}
           onChange={(value) =>
             setForm(prev => ({
               ...prev,
@@ -233,7 +236,7 @@ export default function RegisterPopup({
             label="Password"
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder={t('land.password')}
             value={form.password}
             onChange={handleChange}
             error={errors.password}
@@ -243,7 +246,7 @@ export default function RegisterPopup({
             label="Confirm Password"
             type="password"
             name="confirmPassword"
-            placeholder="Confirm Password"
+            placeholder={t('land.confirm_password')}
             value={form.confirmPassword}
             onChange={handleChange}
             error={errors.confirmPassword}
@@ -253,7 +256,7 @@ export default function RegisterPopup({
 
         <div className="col-span-2 mt-3 text-center">
           <Button type="submit" variant="gradient">
-            {loading ? "Registering..." : "Register Now"}
+            {loading ? t('button.registering') : t('button.register_now')}
           </Button>
         </div>
 

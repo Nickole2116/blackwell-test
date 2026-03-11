@@ -1,4 +1,7 @@
 export default {
+    key: {
+      short: 'en'
+    },
     header: {
       promotion: "Promotion",
       ends_in: "Ends In",
@@ -69,12 +72,31 @@ export default {
       na_5: "Account",
       na_5_d: "Access detailed information about your trading account and monitor profitability.",
 
+      enq: "Enquire Now",
+      enq_success_msg: "Thank you! Your enquiry has been submitted.",
+      name: "Name",
+      email: "Email Address",
+      mobile_no: "Mobile No.",
+      country: "Country",
+      message_optional: "Message (Optional)",
+      password: "Password",
+      confirm_password: "Confirm Password",
+      first_name: "First Name",
+      last_name: "Last Name",
+      select_lang: "Select Language",
+      message: "Message"
+
     },
     message: {},
     button: {
+      submiting: "Submitting...",
+      loging: "Logging in...",
+      registering: "Registering...",
       submit: "Submit",
       register_now: "Register Now",
       login: "Login",
-      logout: "Logout"
+      logout: "Logout",
+      login_now: "Login Now",
+      close: "Close"
     }
   }

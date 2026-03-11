@@ -6,6 +6,8 @@ import { z } from "zod"
 import Input from "@/app/components/shared/Input"
 import Button from "@/app/components/shared/Button"
 import Select from "@/app/components/shared/Select"
+import { useI18n } from '@/context/I18nContext'
+
 
 type FormState = {
   name: string
@@ -25,6 +27,8 @@ const enquirySchema = z.object({
 })
 
 export default function EnquireSection() {
+  const { t } = useI18n()
+
 
   const [form, setForm] = useState<FormState>({
     name: '',
@@ -136,13 +140,13 @@ export default function EnquireSection() {
         <Image src="/blackwell/bg-3.png" alt="bg-1" width={3000} height={3000} className="bg-3" />
       </div>
 
-      <div className="bigtitle">Enquire Now</div>
+      <div className="bigtitle">{t('land.enq')}</div>
 
       <div className="enquire-box">
 
         {success && (
           <div className="success-message">
-            Thank you! Your enquiry has been submitted.
+            {t('land.enq_success_msg')}
           </div>
         )}
 
@@ -154,7 +158,7 @@ export default function EnquireSection() {
               label="Name"
               name="name"
               value={form.name}
-              placeholder="Name"
+              placeholder={t('land.name')}
               onChange={handleChange}
               error={errors.name}
             />
@@ -164,7 +168,7 @@ export default function EnquireSection() {
               type="email"
               name="email"
               value={form.email}
-              placeholder="Email"
+              placeholder={t('land.email')}
               onChange={handleChange}
               error={errors.email}
             />
@@ -177,7 +181,7 @@ export default function EnquireSection() {
               label="Mobile No."
               name="mobile"
               value={form.mobile}
-              placeholder="Mobile No."
+              placeholder={t('land.mobile_no')}
               onChange={handleChange}
               error={errors.mobile}
             />
@@ -186,7 +190,7 @@ export default function EnquireSection() {
               options={options}
               value={form.country}
               searchable
-              placeholder="Country"
+              placeholder={t('land.country')}
               onChange={(value) =>
                 setForm(prev => ({
                   ...prev,
@@ -203,7 +207,7 @@ export default function EnquireSection() {
             name="message"
             rows={4}
             value={form.message}
-            placeholder="Message (Optional)"
+            placeholder={t('land.message_optional')}
             onChange={handleChange}
             error={errors.message}
           />
@@ -211,7 +215,7 @@ export default function EnquireSection() {
           <div className="text-center mt-[2rem]">
             <Button type="submit">
 
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? t('button.submiting') : t('button.submit')}
 
             </Button>
           </div>

@@ -16,6 +16,8 @@ export default function LanguagePopup({
   open,
   onClose
 }: LanguagePopupProps) {
+  const { t } = useI18n()
+
 
   const [language, setLanguage] = useState(
     typeof window !== "undefined"
@@ -27,7 +29,6 @@ export default function LanguagePopup({
   const options = [
     { label: "English", value: "en" },
     { label: "中文", value: "zh" },
-    { label: "日本語", value: "jp" }
   ]
 
   const handleSave = () => {
@@ -42,7 +43,7 @@ export default function LanguagePopup({
     <Popup open={open} onClose={onClose} size="sm">
 
       <h2 className="text-2xl font-bold mb-6">
-        Select Language
+        {t('land.select_lang')}
       </h2>
 
       <Select
@@ -54,7 +55,7 @@ export default function LanguagePopup({
 
       <div className="col-span-2 mt-5 text-center">
         <Button onClick={handleSave} variant="gradient">
-          Change Language Now
+          {t('button.submit')}
         </Button>
       </div>
 

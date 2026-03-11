@@ -1,4 +1,7 @@
 export default {
+  key: {
+    short: 'zh'
+  },
   header: {
     promotion: "优惠",
     ends_in: "结束于",
@@ -68,12 +71,33 @@ export default {
     na_4_d: "实时跟踪你所有交易的状态及账户核心指标。",
     na_5: "账户",
     na_5_d: "了解你的交易账户详情并监控盈利状况。",
+
+
+    enq: "立即咨询",
+    enq_success_msg: "感谢您的咨询！我们已收到您的提交。",
+    name: "姓名",
+    email: "电子邮箱地址",
+    mobile_no: "手机号码",
+    country: "国家",
+    message_optional: "留言（可选）",
+    password: "密码",
+    confirm_password: "确认密码",
+    first_name: "名字",
+    last_name: "姓氏",
+    select_lang: "选择语言",
+    message: "留言"
+
   },
   message: {},
   button: {
+    submiting: "提交中...",
+    loging: "登录中...",
+    registering: "注册中...",
     submit: "提交",
     register_now: "立即注册",
     login: "登录",
-    logout: "登出"
+    logout: "退出登录",
+    login_now: "立即登录",
+    close: "关闭"
   }
 }

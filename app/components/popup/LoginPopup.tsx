@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import { z } from "zod"
+import { useI18n } from '@/context/I18nContext'
+
 
 import Popup from "@/app/components/shared/Popup"
 import Input from "@/app/components/shared/Input"
@@ -38,6 +40,8 @@ export default function LoginPopup({
   open,
   onClose
 }: LoginPopupProps) {
+  const { t } = useI18n()
+
 
   const login = useAuthStore((state) => state.login)
   const [openStatus, setOpenStatus] = useState(false);
@@ -140,7 +144,7 @@ export default function LoginPopup({
     <Popup open={open} onClose={onClose} size="md">
 
       <h2 className="text-2xl font-bold mb-6">
-        Login
+        {t('button.login')}
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -148,7 +152,7 @@ export default function LoginPopup({
         <Input
           label="Email"
           name="email"
-          placeholder="Email Address"
+          placeholder={t('land.email')}
           value={form.email}
           onChange={handleChange}
           error={errors.email}
@@ -157,7 +161,7 @@ export default function LoginPopup({
         <Input
           label="Password"
           type="password"
-          placeholder="Password"
+          placeholder={t('land.password')}
           name="password"
           value={form.password}
           onChange={handleChange}
@@ -167,7 +171,7 @@ export default function LoginPopup({
         <div className="col-span-2 mt-3 text-center">
           <Button type="submit" variant="gradient">
 
-            {loading ? "Logging in..." : "Login Now"}
+            {loading ? t('button.loging') : t('button.login_now')}
 
           </Button>
         </div>

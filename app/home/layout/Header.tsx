@@ -113,28 +113,38 @@ export default function Header({
                                 <Icon path={mdiAccount} size={1} className="thumbnail" />
                                 <span className="ellipsify" style={{ maxWidth: '80px' }}>{user.email}</span>
                             </Button>
-                            <Button variant="gradient" popover="Sign Up Now" onClick={() => logout()}>
+                            <Button variant="gradient" popover={t('button.logout')} onClick={() => logout()}>
                                 {t('button.logout')}
                             </Button>
                         
                         </> : <>
-                            <Button variant="gradient" popover="Sign Up Now" onClick={() => setOpenRegister(true)}>
+                            <Button variant="gradient" popover={t('button.register_now')} onClick={() => setOpenRegister(true)}>
                                 {t('button.register_now')}
                             </Button>
-                            <Button variant="icon" popover="Login Here" onClick={() => setOpenLogin(true)}>
+                            <Button variant="icon" popover={t('button.login')} onClick={() => setOpenLogin(true)}>
                                 <Icon path={mdiAccount} size={1} className="thumbnail" />
                                 <span>{t('button.login')}</span>
                             </Button>
                         </>}
                         
-                        <Button variant="null" popover="Change Language Here" onClick={() => setOpenLanguage(true)}>
-                            <img src="https://flagsapi.com/GB/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                        <Button variant="null" popover={t('land.select_lang')} onClick={() => setOpenLanguage(true)}>
+                            {t('key.short') == 'en' && <>
+                                <img src="https://flagsapi.com/GB/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                            </>}
+                            {t('key.short') == 'zh' && <>
+                                <img src="https://flagsapi.com/CN/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                            </>}
                         </Button>
 
                     </div>
                     <div className="right-side onlymobflex">
-                        <Button variant="null" popover="Change Language Here" onClick={() => setOpenLanguage(true)}>
-                            <img src="https://flagsapi.com/GB/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                        <Button variant="null" popover={t('land.select_lang')} onClick={() => setOpenLanguage(true)}>
+                            {t('key.short') == 'en' && <>
+                                <img src="https://flagsapi.com/GB/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                            </>}
+                            {t('key.short') == 'zh' && <>
+                                <img src="https://flagsapi.com/CN/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                            </>}
                         </Button>
                         <Button variant="icon">
                             <Icon path={mdiMenu} size={1} className="menu" />
