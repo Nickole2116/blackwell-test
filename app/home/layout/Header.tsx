@@ -5,7 +5,7 @@ import Icon from "@mdi/react";
 import Button from "@/app/components/shared/Button";
 import Marquee from "@/app/components/shared/Marquee";
 
-import { mdiTranslateVariant, mdiAccount } from "@mdi/js"
+import { mdiMenu, mdiAccount } from "@mdi/js"
 import { useEffect, useState } from "react"
 import { useI18n } from '@/context/I18nContext'
 import { useAuthStore } from "@/store/authStore"
@@ -132,8 +132,16 @@ export default function Header({
                         </Button>
 
                     </div>
+                    <div className="right-side onlymobflex">
+                        <Button variant="null" popover="Change Language Here" onClick={() => setOpenLanguage(true)}>
+                            <img src="https://flagsapi.com/GB/shiny/64.png" alt="App Store" width={100} height={100} className="locate" />
+                        </Button>
+                        <Button variant="icon">
+                            <Icon path={mdiMenu} size={1} className="menu" />
+                        </Button>
+                    </div>
             </div>
-            <div className="onlymob">
+            <div className="onlymob marquee-bar-mob">
                 <Marquee speed={50} pauseOnHover={true}>
                     <div className="flex gap-20 px-10 items-center">
                         <span>{t('header.promotion')} {t('header.ends_in')} {String(time.days).padStart(2,'0')} {t('header.days')} {String(time.hours).padStart(2,'0')} {t('header.hours')} {String(time.minutes).padStart(2,'0')} {t('header.minutes')}</span>

@@ -45,9 +45,22 @@ export default function Slider({
       </button>
 
       <div
-        className="slider-track"
+        className="slider-track onlywebflex"
         style={{
           transform: `translateX(-${index * 25}%)`
+        }}
+      >
+        {children.map((child, i) => (
+          <div className="slide" key={i}>
+            {child}
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="slider-track onlymobflex"
+        style={{
+          transform: `translateX(-${index * 210}px)`
         }}
       >
         {children.map((child, i) => (

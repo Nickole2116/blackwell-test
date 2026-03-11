@@ -7,6 +7,7 @@ import Popup from "@/app/components/shared/Popup"
 import Input from "@/app/components/shared/Input"
 import Button from "@/app/components/shared/Button"
 import { useAuthStore } from "@/store/authStore"
+import StatusPopup from "./StatusPopup"
 
 type LoginPopupProps = {
   open: boolean
@@ -39,6 +40,7 @@ export default function LoginPopup({
 }: LoginPopupProps) {
 
   const login = useAuthStore((state) => state.login)
+  const [openStatus, setOpenStatus] = useState(false);
 
   const [form, setForm] = useState<FormState>({
     email: '',
@@ -118,6 +120,8 @@ export default function LoginPopup({
 
       console.log("Login success", form)
 
+      setOpenStatus(true);
+
       onClose()
 
     } catch {
@@ -132,7 +136,7 @@ export default function LoginPopup({
 
   }
 
-  return (
+  return (<>
     <Popup open={open} onClose={onClose} size="md">
 
       <h2 className="text-2xl font-bold mb-6">
@@ -144,6 +148,7 @@ export default function LoginPopup({
         <Input
           label="Email"
           name="email"
+          placeholder="Email Address"
           value={form.email}
           onChange={handleChange}
           error={errors.email}
@@ -152,20 +157,27 @@ export default function LoginPopup({
         <Input
           label="Password"
           type="password"
+          placeholder="Password"
           name="password"
           value={form.password}
           onChange={handleChange}
           error={errors.password}
         />
 
-        <Button type="submit">
+        <div className="col-span-2 mt-3 text-center">
+          <Button type="submit" variant="gradient">
 
-          {loading ? "Logging in..." : "Login"}
+            {loading ? "Logging in..." : "Login Now"}
 
-        </Button>
+          </Button>
+        </div>
+
+        
 
       </form>
 
     </Popup>
-  )
+
+    <StatusPopup open={openStatus} onClose={() => setOpenStatus(false)} msg={`Hi ${form.email}, welcome to Blackwell, please verify your email immediately.`} />
+  </>)
 }

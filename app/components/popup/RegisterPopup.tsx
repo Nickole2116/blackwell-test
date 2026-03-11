@@ -8,6 +8,7 @@ import Input from "@/app/components/shared/Input"
 import Button from "@/app/components/shared/Button"
 import Select from "@/app/components/shared/Select"
 import { useAuthStore } from "@/store/authStore"
+import StatusPopup from "./StatusPopup"
 
 type RegisterPopupProps = {
   open: boolean
@@ -68,6 +69,7 @@ export default function RegisterPopup({
     password: '',
     confirmPassword: ''
   })
+  const [openStatus, setOpenStatus] = useState(false);
 
   const login = useAuthStore((state) => state.login)
 
@@ -151,6 +153,7 @@ export default function RegisterPopup({
       console.log("Register success", form)
 
       onClose()
+      setOpenStatus(true);
 
     } catch {
 
@@ -164,34 +167,41 @@ export default function RegisterPopup({
 
   }
 
-  return (
+  return (<>
     <Popup open={open} onClose={onClose} size="lg">
 
-      <h2 className="text-2xl font-bold mb-6">
+      <h2 className="text-xl font-bold mb-6 color-[#fff]">
         Sign Up
       </h2>
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="content">
 
-        <Input
-          label="First Name"
-          name="firstName"
-          value={form.firstName}
-          onChange={handleChange}
-          error={errors.firstName}
-        />
+        <div className="form-row mb-1">
+          <Input
+            label="First Name"
+            name="firstName"
+            placeholder="First Name"
+            value={form.firstName}
+            onChange={handleChange}
+            error={errors.firstName}
+          />
 
-        <Input
-          label="Last Name"
-          name="lastName"
-          value={form.lastName}
-          onChange={handleChange}
-          error={errors.lastName}
-        />
+          <Input
+            label="Last Name"
+            name="lastName"
+            placeholder="Last Name"
+            value={form.lastName}
+            onChange={handleChange}
+            error={errors.lastName}
+          />
+        </div>
+
+        
 
         <Input
           label="Email"
           name="email"
+          placeholder="Email Address"
           value={form.email}
           onChange={handleChange}
           error={errors.email}
@@ -200,6 +210,7 @@ export default function RegisterPopup({
         <Input
           label="Mobile"
           name="mobile"
+          placeholder="Mobile No."
           value={form.mobile}
           onChange={handleChange}
           error={errors.mobile}
@@ -217,32 +228,40 @@ export default function RegisterPopup({
           }
         />
 
-        <Input
-          label="Password"
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-          error={errors.password}
-        />
+        <div className="form-row mb-1">
+          <Input
+            label="Password"
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+            error={errors.password}
+          />
 
-        <Input
-          label="Confirm Password"
-          type="password"
-          name="confirmPassword"
-          value={form.confirmPassword}
-          onChange={handleChange}
-          error={errors.confirmPassword}
-        />
+          <Input
+            label="Confirm Password"
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            error={errors.confirmPassword}
+          />
+        </div>
+        
 
-        <div className="col-span-2 mt-4">
-          <Button type="submit">
-            {loading ? "Registering..." : "Register"}
+        <div className="col-span-2 mt-3 text-center">
+          <Button type="submit" variant="gradient">
+            {loading ? "Registering..." : "Register Now"}
           </Button>
         </div>
 
       </form>
 
     </Popup>
-  )
+
+  <StatusPopup open={openStatus} onClose={() => setOpenStatus(false)} msg={`Hi ${form.firstName}, welcome to Blackwell, please verify your email immediately.`} />
+
+  </>)
 }

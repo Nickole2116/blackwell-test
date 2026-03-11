@@ -46,6 +46,20 @@ export default function TradeProSection() {
                 >
                     <h2>{i + 1}</h2>
                     <span>{step.title}</span>
+
+                    <div className="mob-content onlymobflex">
+                    
+                        <div className="s">
+                                <Image
+                                src={step.img}
+                                alt={`guide-${i}`}
+                                width={200}
+                                height={200}
+                                className="img"
+                                />
+                            
+                        </div>
+                    </div>
                 </div>
                 ))}
             </div>
@@ -53,8 +67,8 @@ export default function TradeProSection() {
             {/* content */}
             {steps.map((step, i) => (
                 <div
-                key={i}
-                className={`content ${sec === i ? "bolded" : ""}`}
+                    key={i}
+                    className={`content onlywebflex ${sec === i ? "bolded" : ""}`}
                 >
                 <div className="s">
                     <Image

@@ -54,9 +54,10 @@ export default function Popup({
       {/* popup */}
       <div
         className={`
-          relative bg-[#17294a] rounded-2xl shadow-xl p-6 w-full
+          relative bg-[#17294a] rounded-2xl shadow-xl px-[1rem] py-[1.5rem] w-[95%]
           ${sizeClass[size]}
           animate-popup
+          popup
         `}
       >
         {children}

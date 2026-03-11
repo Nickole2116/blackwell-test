@@ -52,9 +52,9 @@ export default function LanguagePopup({
         onChange={(value) => setLanguage(value)}
       />
 
-      <div className="mt-6">
-        <Button onClick={handleSave}>
-          Save
+      <div className="col-span-2 mt-5 text-center">
+        <Button onClick={handleSave} variant="gradient">
+          Change Language Now
         </Button>
       </div>
 
