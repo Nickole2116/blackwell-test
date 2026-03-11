@@ -39,8 +39,10 @@ export default function CopyTradeSection() {
                         <div className="brand">{t('land.oil')}</div>
                         <div className="brand">{t('land.indices')}</div>
                     </div>
-                    <Button variant="primary">{t('button.register_now')}</Button>
-                    <small className="block">{t('land.sub1_reminder')}</small>
+                    <div className="buttons">
+                        <Button variant="primary">{t('button.register_now')}</Button>
+                        <small className="block">{t('land.sub1_reminder')}</small>
+                    </div>
                 </div>
 
             </div>
